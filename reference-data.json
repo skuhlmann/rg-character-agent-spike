@@ -1,0 +1,342 @@
+{
+  "version": "0.1.0",
+  "abilities": [
+    "strength",
+    "dexterity",
+    "constitution",
+    "intelligence",
+    "wisdom",
+    "charisma"
+  ],
+  "skills": {
+    "acrobatics": "dexterity",
+    "animalHandling": "wisdom",
+    "arcana": "intelligence",
+    "athletics": "strength",
+    "deception": "charisma",
+    "history": "intelligence",
+    "insight": "wisdom",
+    "intimidation": "charisma",
+    "investigation": "intelligence",
+    "medicine": "wisdom",
+    "nature": "intelligence",
+    "perception": "wisdom",
+    "performance": "charisma",
+    "persuasion": "charisma",
+    "religion": "intelligence",
+    "sleightOfHand": "dexterity",
+    "stealth": "dexterity",
+    "survival": "wisdom"
+  },
+  "races": {
+    "human": {
+      "speed": 30,
+      "languages": [
+        "Common"
+      ],
+      "abilityBonuses": {
+        "strength": 1,
+        "dexterity": 1,
+        "constitution": 1,
+        "intelligence": 1,
+        "wisdom": 1,
+        "charisma": 1
+      },
+      "traits": [
+        "Extra Language (simplified omitted in v0.1)"
+      ]
+    },
+    "elf": {
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Elvish"
+      ],
+      "abilityBonuses": {
+        "dexterity": 2
+      },
+      "traits": [
+        "Darkvision",
+        "Keen Senses",
+        "Fey Ancestry",
+        "Trance"
+      ]
+    },
+    "dwarf": {
+      "speed": 25,
+      "languages": [
+        "Common",
+        "Dwarvish"
+      ],
+      "abilityBonuses": {
+        "constitution": 2
+      },
+      "traits": [
+        "Darkvision",
+        "Dwarven Resilience",
+        "Stonecunning"
+      ]
+    },
+    "halfling": {
+      "speed": 25,
+      "languages": [
+        "Common",
+        "Halfling"
+      ],
+      "abilityBonuses": {
+        "dexterity": 2
+      },
+      "traits": [
+        "Lucky",
+        "Brave",
+        "Halfling Nimbleness"
+      ]
+    }
+  },
+  "backgrounds": {
+    "acolyte": {
+      "skillProficiencies": [
+        "insight",
+        "religion"
+      ],
+      "languages": [
+        "Any",
+        "Any"
+      ],
+      "feature": "Shelter of the Faithful"
+    },
+    "criminal": {
+      "skillProficiencies": [
+        "deception",
+        "stealth"
+      ],
+      "toolProficiencies": [
+        "Thieves' Tools"
+      ],
+      "feature": "Criminal Contact"
+    },
+    "soldier": {
+      "skillProficiencies": [
+        "athletics",
+        "intimidation"
+      ],
+      "toolProficiencies": [
+        "Gaming Set",
+        "Vehicles (land)"
+      ],
+      "feature": "Military Rank"
+    },
+    "sage": {
+      "skillProficiencies": [
+        "arcana",
+        "history"
+      ],
+      "languages": [
+        "Any",
+        "Any"
+      ],
+      "feature": "Researcher"
+    }
+  },
+  "classes": {
+    "fighter": {
+      "hitDie": 10,
+      "savingThrows": [
+        "strength",
+        "constitution"
+      ],
+      "skillChoices": {
+        "choose": 2,
+        "options": [
+          "acrobatics",
+          "animalHandling",
+          "athletics",
+          "history",
+          "insight",
+          "intimidation",
+          "perception",
+          "survival"
+        ]
+      },
+      "armorProficiencies": [
+        "All Armor",
+        "Shields"
+      ],
+      "weaponProficiencies": [
+        "Simple Weapons",
+        "Martial Weapons"
+      ],
+      "features": [
+        "Fighting Style (not selected in v0.1)",
+        "Second Wind"
+      ],
+      "spellcasting": {
+        "enabled": false
+      }
+    },
+    "rogue": {
+      "hitDie": 8,
+      "savingThrows": [
+        "dexterity",
+        "intelligence"
+      ],
+      "skillChoices": {
+        "choose": 4,
+        "options": [
+          "acrobatics",
+          "athletics",
+          "deception",
+          "insight",
+          "intimidation",
+          "investigation",
+          "perception",
+          "performance",
+          "persuasion",
+          "sleightOfHand",
+          "stealth"
+        ]
+      },
+      "armorProficiencies": [
+        "Light Armor"
+      ],
+      "weaponProficiencies": [
+        "Simple Weapons",
+        "Hand Crossbows",
+        "Longswords",
+        "Rapiers",
+        "Shortswords"
+      ],
+      "features": [
+        "Sneak Attack",
+        "Thieves' Cant"
+      ],
+      "spellcasting": {
+        "enabled": false
+      }
+    },
+    "wizard": {
+      "hitDie": 6,
+      "savingThrows": [
+        "intelligence",
+        "wisdom"
+      ],
+      "skillChoices": {
+        "choose": 2,
+        "options": [
+          "arcana",
+          "history",
+          "insight",
+          "investigation",
+          "medicine",
+          "religion"
+        ]
+      },
+      "armorProficiencies": [],
+      "weaponProficiencies": [
+        "Daggers",
+        "Darts",
+        "Slings",
+        "Quarterstaffs",
+        "Light Crossbows"
+      ],
+      "features": [
+        "Spellcasting",
+        "Arcane Recovery"
+      ],
+      "spellcasting": {
+        "enabled": true,
+        "ability": "intelligence",
+        "cantripsKnown": 3,
+        "spellsKnown": 6,
+        "spellSlots": {
+          "1": 2
+        }
+      }
+    },
+    "cleric": {
+      "hitDie": 8,
+      "savingThrows": [
+        "wisdom",
+        "charisma"
+      ],
+      "skillChoices": {
+        "choose": 2,
+        "options": [
+          "history",
+          "insight",
+          "medicine",
+          "persuasion",
+          "religion"
+        ]
+      },
+      "armorProficiencies": [
+        "Light Armor",
+        "Medium Armor",
+        "Shields"
+      ],
+      "weaponProficiencies": [
+        "Simple Weapons"
+      ],
+      "features": [
+        "Spellcasting",
+        "Divine Domain (simplified omitted in v0.1)"
+      ],
+      "spellcasting": {
+        "enabled": true,
+        "ability": "wisdom",
+        "cantripsKnown": 3,
+        "preparedFormula": "level + wisdom modifier",
+        "spellSlots": {
+          "1": 2
+        }
+      }
+    }
+  },
+  "spells": {
+    "wizard": {
+      "cantrips": [
+        "Fire Bolt",
+        "Light",
+        "Mage Hand",
+        "Prestidigitation",
+        "Ray of Frost"
+      ],
+      "level1": [
+        "Magic Missile",
+        "Shield",
+        "Detect Magic",
+        "Mage Armor",
+        "Sleep",
+        "Thunderwave"
+      ]
+    },
+    "cleric": {
+      "cantrips": [
+        "Guidance",
+        "Light",
+        "Sacred Flame",
+        "Spare the Dying",
+        "Thaumaturgy"
+      ],
+      "level1": [
+        "Bless",
+        "Cure Wounds",
+        "Detect Magic",
+        "Guiding Bolt",
+        "Healing Word",
+        "Shield of Faith"
+      ]
+    }
+  },
+  "abilityScoreMethods": {
+    "standard_array": [
+      15,
+      14,
+      13,
+      12,
+      10,
+      8
+    ],
+    "manual_entry": "freeform"
+  }
+}

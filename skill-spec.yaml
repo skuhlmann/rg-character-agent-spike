@@ -1,0 +1,66 @@
+name: dnd5e_character_creator_minimal
+version: 0.1.0
+description: Guides a user through creating a minimal D&D 5e 2014 character draft
+  and outputs structured JSON.
+triggers:
+- Help me create a new D&D character
+- Make me a D&D character
+- Build a 5e character
+- Walk me through character creation
+scope:
+  system: DND5E
+  edition: '2014'
+  supportedLevelRange:
+  - 1
+  - 1
+  supportedClasses:
+  - fighter
+  - rogue
+  - wizard
+  - cleric
+  supportedRaces:
+  - human
+  - elf
+  - dwarf
+  - halfling
+  supportedBackgrounds:
+  - acolyte
+  - criminal
+  - soldier
+  - sage
+  notes:
+  - Minimal starter pack for conversational character creation.
+  - Focuses on level 1 creation and core attributes.
+  - Allows partial drafts and final JSON export.
+inputs:
+  userMessage: string
+  sessionState: object|null
+outputs:
+  assistantMessage: string
+  updatedSessionState: object
+  characterJson: object|null
+  completionStatus: in_progress|complete|blocked
+commands:
+- show summary
+- show json
+- change <field> to <value>
+- skip this
+- recommend a class
+- finish with defaults
+behaviorRules:
+- Ask one focused question at a time unless the user supplies multiple details in
+  one message.
+- Parse compact answers and fill multiple fields when possible.
+- Use beginner-friendly language by default.
+- Only ask spellcasting questions for spellcasting classes.
+- Recompute derived values after every answer.
+- Validate choices against reference data.
+- Support partial export at any time.
+- When complete, output final JSON in a fenced code block.
+completionCriteria:
+- identity.class.primary is set
+- identity.class.level is set to 1
+- identity.race.name is set
+- identity.background is set
+- all six ability scores are assigned
+- required class skill picks are completed

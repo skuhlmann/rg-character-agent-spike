@@ -1,0 +1,99 @@
+{
+  "version": "0.1.0",
+  "steps": [
+    {
+      "id": "start",
+      "title": "Start",
+      "goal": "Determine whether the user wants guidance or recommendations.",
+      "prompts": [
+        "Great \u2014 let\u2019s build your D&D character step by step. Do you already know what class or vibe you want, or would you like a few suggestions?"
+      ]
+    },
+    {
+      "id": "basics",
+      "title": "Basics",
+      "requiredFields": [
+        "character.identity.characterName",
+        "character.identity.class.primary",
+        "character.identity.class.level",
+        "character.identity.race.name",
+        "character.identity.background"
+      ],
+      "questionOrder": [
+        "character.identity.class.primary",
+        "character.identity.class.level",
+        "character.identity.race.name",
+        "character.identity.background",
+        "character.identity.characterName",
+        "character.identity.playerName",
+        "character.identity.alignment"
+      ]
+    },
+    {
+      "id": "ability_scores",
+      "title": "Ability Scores",
+      "requiredFields": [
+        "character.meta.abilityScoreMethod",
+        "character.abilities.strength.score",
+        "character.abilities.dexterity.score",
+        "character.abilities.constitution.score",
+        "character.abilities.intelligence.score",
+        "character.abilities.wisdom.score",
+        "character.abilities.charisma.score"
+      ],
+      "questionOrder": [
+        "character.meta.abilityScoreMethod",
+        "character.abilities.strength.score",
+        "character.abilities.dexterity.score",
+        "character.abilities.constitution.score",
+        "character.abilities.intelligence.score",
+        "character.abilities.wisdom.score",
+        "character.abilities.charisma.score"
+      ],
+      "notes": [
+        "Only support standard array or manual entry in v0.1.",
+        "If standard array is chosen, ask the user to assign 15, 14, 13, 12, 10, 8."
+      ]
+    },
+    {
+      "id": "class_choices",
+      "title": "Class Choices",
+      "requiredFields": [
+        "character.skills"
+      ],
+      "notes": [
+        "Apply class saving throw proficiencies automatically.",
+        "Ask for required class skill picks.",
+        "Enable spellcasting only for wizard and cleric."
+      ]
+    },
+    {
+      "id": "background",
+      "title": "Background",
+      "requiredFields": [],
+      "notes": [
+        "Apply fixed starter background proficiencies and feature text from reference data."
+      ]
+    },
+    {
+      "id": "spellcasting",
+      "title": "Spellcasting",
+      "condition": "character.spellcasting.enabled === true",
+      "requiredFields": [],
+      "notes": [
+        "Only ask for starter spells for wizard and cleric.",
+        "Keep spell list tiny in v0.1."
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review",
+      "requiredFields": [],
+      "notes": [
+        "Show summary.",
+        "Offer final JSON.",
+        "Mark meta.isComplete true when minimum required fields are present."
+      ]
+    }
+  ]
+}
