@@ -1,6 +1,3 @@
-Here’s the complete `SKILL.md` exactly as it sits on disk:
-
-````markdown
 ---
 name: dnd5e_character_creator_minimal
 description: Conversational workflow for building a minimal level-1 D&D 5e (2014) character and exporting JSON drafts for fighter, rogue, wizard, and cleric.
@@ -134,6 +131,7 @@ description: Conversational workflow for building a minimal level-1 D&D 5e (2014
   ]
 }
 ```
+
 ````
 
 ## Reference Data
@@ -435,3 +433,4 @@ description: Conversational workflow for building a minimal level-1 D&D 5e (2014
         "identity
 ...(truncated)...
 ```
+````
